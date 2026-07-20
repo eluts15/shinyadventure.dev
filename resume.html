@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ethan Luts — Resumé</title>
+  <link rel="stylesheet" href="tufte.css" />
+  <style>
+    /* Compact override: scale the whole type system down and tighten
+       vertical rhythm so the resume reads as one screen, not a scroll. */
+    html { font-size: 12px; }
+
+    article { padding: 2rem 0; }
+
+    /* No body max-width override here — leaving it at tufte.css's default
+       keeps this page's container the same size as index.html's, so the
+       nav and text align to the same left edge on both pages. */
+
+    /* Cap line length for readability. Using max-width (not a fixed
+       width%) means this also degrades gracefully on narrow screens —
+       it just becomes 100% of the available space, so no separate
+       mobile override is needed. */
+    section > p, section > ul, section > ol, section > dl {
+      max-width: 620px;
+    }
+
+    nav.sitenav { margin-bottom: 1.6rem; }
+    nav.sitenav a {
+      margin-right: 1.5em;
+      text-decoration: none;
+      color: #111;
+      border-bottom: 1px dotted #999;
+      font-size: 1.3rem;
+    }
+    nav.sitenav a:hover { border-bottom: 1px solid #111; }
+    nav.sitenav a.current {
+      color: #999;
+      border-bottom: none;
+      cursor: default;
+    }
+
+    h1 { margin-top: 0; margin-bottom: 0.3rem; font-size: 2.6rem; }
+    h2 { margin-top: 1.6rem; margin-bottom: 0.6rem; font-size: 1.65rem; }
+    h3 { margin-top: 1rem; margin-bottom: 0.15rem; font-size: 1.35rem; }
+
+    section { padding-top: 0.2rem; padding-bottom: 0.2rem; }
+
+    .contact-line {
+      font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+      font-style: italic;
+      color: #555;
+      font-size: 1.15rem;
+      line-height: 1.5rem;
+      display: block;
+      margin-top: 0;
+      margin-bottom: 1.2rem;
+    }
+    .contact-line a { color: #555; }
+    .entry .role-meta a { color: #555; }
+
+    .entry { margin-bottom: 1.1rem; }
+    .entry h3 { margin-bottom: 0.15rem; }
+    .entry .role-meta {
+      font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+      font-style: italic;
+      color: #555;
+      font-size: 1.1rem;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .project { margin-top: 0.7rem; }
+    .project h4 {
+      font-size: 1.15rem;
+      font-weight: 400;
+      font-style: italic;
+      margin-bottom: 0.15rem;
+      font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    }
+
+    p, dl, ol, ul { font-size: 1.05rem; line-height: 1.55rem; }
+    .entry p { margin-top: 0.3rem; margin-bottom: 0.3rem; }
+    .entry ul { margin-top: 0.15rem; margin-bottom: 0; }
+    li:not(:first-child) { margin-top: 0.2rem; }
+
+    table.skills { width: 100%; border-collapse: collapse; }
+    table.skills td {
+      vertical-align: top;
+      padding: 0.1em 1.5em 0.1em 0;
+      font-size: 1.05rem;
+      line-height: 1.3rem;
+    }
+    table.skills td strong { font-size: 1.05rem; }
+  </style>
+</head>
+<body>
+  <article>
+    <nav class="sitenav">
+      <a href="index.html">About</a>
+      <a href="resume.html" class="current">Resumé</a>
+    </nav>
+
+    <h1>Ethan Luts</h1>
+    <span class="contact-line">
+      San Diego, CA &middot; <a href="mailto:eluts15@gmail.com">eluts15@gmail.com</a><br />
+      <a href="https://github.com/eluts15">github.com/eluts15</a> &middot;
+      <a href="https://linkedin.com/in/ethan-luts">linkedin.com/in/ethan-luts</a>
+    </span>
+
+    <section>
+      <h2>Core Skills</h2>
+      <table class="skills">
+        <tbody>
+          <tr>
+            <td><strong>IaC(infrastrucute-as-code) &amp; Config Management</strong><br />Pulumi, TypeScript, Terraform, Ansible, Cloudformation</td>
+            <td><strong>CI/CD</strong><br />GCP Cloud Build, GitHub Actions, GKE, Cloud Run, Docker, Kubernetes</td>
+          </tr>
+          <tr>
+            <td><strong>Cloud Platforms</strong><br />AWS (EC2, IAM, CloudWatch, CloudTrail, S3), GCP, Cloudflare</td>
+            <td><strong>Observability</strong><br />Grafana, CloudWatch, CloudTrail, GCP Logging, alert routing</td>
+          </tr>
+          <tr>
+            <td><strong>Security</strong><br />IAM least-privilege access principles, security auditing, service account hardening</td>
+            <td><strong>System Administration / Operations</strong><br />Linux fleet management, Ansible automation, disaster recovery/backup</td>
+          </tr>
+          <tr>
+            <td><strong>Embedded Systems</strong><br />Rust, Embassy framework, no-std, ESP32, STM32</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Professional Experience</h2>
+
+      <div class="entry">
+        <h3>Infrastructure / DevOps Engineer</h3>
+        <span class="role-meta">Ascend Technologies / 4thDown Solutions, LLC (Aquired by Acto) &middot; Remote &middot; June 2021&ndash;April 2025</span>
+
+        <div class="project">
+          <h4>IaC Platform Overhaul &mdash; Terraform &rarr; Pulumi</h4>
+          <ul>
+            <li>
+              Co-architected and built the original multi-cloud IaC platform (Terraform)
+              spanning AWS and GCP, Cloudflare across dev, staging, and prod&mdash;end-to-end ownership of a
+              production infrastructure.
+            </li>
+            <li>
+              Identified recurring deployment failures and persistent state drift as the core blockers slowing the
+              product team; led the strategic decision and full execution to migrate to a solution managed fully by
+              Pulumi.
+            </li>
+            <li>
+              Moved state management off Terraform Cloud to a self-hosted Pulumi backend, cutting monthly tooling
+              costs by ~$400&mdash;one of several initiatives that reduced cloud spend while maintaining
+              reliability.
+            </li>
+            <li>
+              Introduced environment-based promotion workflows (dev &rarr; staging &rarr; prod) with review gates,
+              reducing average deployment lead time by ~40%, giving the team a repeatable, auditable release
+              process across a fast-moving product org.
+            </li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <h4>CI/CD Pipeline Automation for Deploying LLM Voice Agents &mdash; GKE, Cloud Run &amp; Cloud Build</h4>
+          <ul>
+            <li>
+              Designed and built end-to-end CI/CD on GCP Cloud Build&mdash;covering image build,
+              vulnerability scanning, push-to-registry, and environment-specific promotion.
+            </li>
+            <li>
+              Configured push-to-deploy on feature branches and tag-triggered releases for production to GKE, giving the
+              team reliable, hands-off deployments across all environments.
+            </li>
+            <li>
+              Built ephemeral per-branch preview environments on Cloud Run, enabling engineers to validate changes in
+              full isolation before merge and permanently eliminating staging drift caused by a shared environment.
+            </li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <h4>Security Hardening &amp; Observability &mdash; IAM, Grafana, CloudWatch, CloudTrail</h4>
+          <ul>
+            <li>
+              Conducted recurring security audits across AWS, GCP, and Cloudflare; enforced least-privilege IAM
+              policies and eliminated stale service accounts&mdash;reducing standing permissions
+              across a multi-cloud environment with broad attack surface.
+            </li>
+            <li>
+              Consolidated CloudWatch, CloudTrail, and GCP logging into unified Grafana dashboards with alert routing
+              to appropriate channels, delivering real-time visibility into security events and infrastructure
+              anomalies across all environments.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <h3>Systems Administrator</h3>
+        <span class="role-meta">4thDown Solutions, LLC &middot; Remote &middot; November 2018&ndash;June 2021</span>
+
+        <div class="project">
+          <h4>Linux Fleet Management, Automation &amp; Disaster Recovery &mdash; Ansible, Python</h4>
+          <ul>
+            <li>
+              Managed ~100 Linux VMs across Linode/Akamai using Ansible for provisioning, patching, and minimal-downtime
+              application deployments&mdash;building the systems administration foundation that preceded a
+              transition into full infrastructure/DevOps engineering.
+            </li>
+            <li>
+              Owned the full backup and disaster recovery strategy end-to-end: defined RPO/RTO targets, validated
+              recovery procedures through regular drills, and automated backup workflows.
+            </li>
+            <li>
+              Authored infrastructure documentation and operational runbooks that cut team onboarding time and became
+              the standard operating foundation as the company scaled.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Personal Projects</h2>
+      <div class="entry">
+        <h3>GPS Navigation &amp; Autopilot</h3>
+        <span class="role-meta">Rust &middot; Raspberry Pi &middot; <a href="https://github.com/eluts15/geo-rs">github.com/eluts15/geo-rs</a></span>
+        <ul>
+          <li>
+            Building a Rust-based marine autopilot for a kayak on a Raspberry Pi, parsing NMEA sentences from a
+            u-blox GPS module to track position and heading in real time.
+          </li>
+          <li>
+            Combines GPS heading with a calibrated magnetometer compass so heading stays available whether the
+            vessel is moving or stationary, with hard-iron calibration to correct for magnetic interference.
+          </li>
+          <li>
+            Includes a standalone calibration tool that walks through a 360&deg; rotation to derive the
+            magnetometer's offset values, which then feed the hard-iron correction used at runtime.
+          </li>
+          <li>
+            In progress: closing the loop with PWM servo control for automatic course correction, using GPIO
+            toggles for manual heading adjustment in the meantime.
+          </li>
+        </ul>
+      </div>
+      <div class="entry">
+        <h3>Laundry Cycle Monitor</h3>
+        <span class="role-meta">Rust &middot; Embassy &middot; Embedded Systems on ESP32 <a href="https://github.com/eluts15/laundry-monitor">github.com/eluts15/laundry-monitor</a></span>
+        <ul>
+          <li>
+            Built an embedded Rust application on ESP32 using the Embassy async framework to monitor laundry
+            cycles&mdash;detecting cycle completion via SW-420 vibration sensors and door state(open/closed) with magnetic reed
+            sensors.
+          </li>
+          <li>
+            Implemented real-time push notifications to subscribed users via a self-hosted Ntfy instance running in
+            Docker, eliminating the need to manually check machines.
+          </li>
+          <li>
+            Entire firmware written in no-std Rust with async task scheduling via Embassy&mdash;handling concurrent
+            sensor polling, WiFi connectivity, and HTTP notification dispatch on bare metal.
+          </li>
+        </ul>
+      </div>
+    </section>
+  </article>
+</body>
+</html>

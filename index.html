@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ethan Luts</title>
+  <link rel="stylesheet" href="tufte.css" />
+  <style>
+    nav.sitenav { margin-bottom: 3rem; }
+    nav.sitenav a {
+      margin-right: 1.5em;
+      text-decoration: none;
+      color: #111;
+      border-bottom: 1px dotted #999;
+    }
+    nav.sitenav a:hover { border-bottom: 1px solid #111; }
+    nav.sitenav a.current {
+      color: #999;
+      border-bottom: none;
+      cursor: default;
+    }
+  </style>
+</head>
+<body>
+  <article>
+    <nav class="sitenav">
+      <a href="index.html" class="current">About</a>
+      <a href="resume.html">Resumé</a>
+    </nav>
+
+    <section>
+      <p>
+        👋 Hello, I'm Ethan Luts. I'm passionate about building reliable systems and tooling,
+        and about reducing complexity wherever I find it&mdash;which is most of what's kept me in DevOps for the
+        last six years: building and running the infrastructure that lets other engineers ship without thinking
+        about the plumbing underneath them.
+        <label for="mn-photo" class="margin-toggle">&#8853;</label>
+        <input type="checkbox" id="mn-photo" class="margin-toggle" />
+        <span class="marginnote">
+          <img src="images/coastal-view.jpg" style="width:100%" />
+        </span>
+        <label for="sn-1" class="margin-toggle sidenote-number"></label>
+        <input type="checkbox" id="sn-1" class="margin-toggle" />
+        <span class="sidenote">
+          Multi-cloud IaC, CI/CD pipelines, observability&mdash;the details live on the <a href="resume.html">resumé</a>.
+        </span>
+      </p>
+
+      <p>
+        Outside of work, I've been learning embedded systems with Rust&mdash;pulling firmware down to bare metal,
+        away from the abstractions I spend most of my day working above.
+      </p>
+
+      <p>
+        What draws me to it is the boundary itself: the place where software stops being purely logical and has
+        to answer to physics&mdash;sensors, timing, voltage, the real world💡
+      </p>
+    </section>
+  </article>
+</body>
+</html>
