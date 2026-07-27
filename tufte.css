@@ -8,6 +8,12 @@ html {
     font-size: 15px;
 }
 
+:root {
+    --fg: #111;
+    --fg-muted: #555;
+    --fg-faint: #999;
+}
+
 body {
     width: 87.5%;
     margin-left: auto;
@@ -15,16 +21,20 @@ body {
     padding-left: 12.5%;
     font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, "Times New Roman", serif;
     background-color: #fffff8;
-    color: #111;
+    color: var(--fg);
     max-width: 1400px;
     counter-reset: sidenote-counter;
 }
 
 /* Adds dark mode */
 @media (prefers-color-scheme: dark) {
+    :root {
+        --fg: #ddd;
+        --fg-muted: #aaa;
+        --fg-faint: #888;
+    }
     body {
         background-color: #151515;
-        color: #ddd;
     }
 }
 
@@ -309,6 +319,11 @@ pre.fullwidth > code {
 .fullwidth {
     max-width: 90%;
     clear:both;
+}
+
+span.newthought {
+    font-variant: small-caps;
+    font-size: 1.2em;
 }
 
 input.margin-toggle {
